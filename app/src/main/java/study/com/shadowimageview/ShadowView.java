@@ -23,6 +23,7 @@ public class ShadowView extends View {
     public final static int TYPE_TOP = 0X1;
     public final static int TYPE_BOTTOM = 0X2;
     private int curType = TYPE_TOP;
+    private int alpha = 80;
 
     public ShadowView(Context context) {
         this(context, null);
@@ -36,10 +37,10 @@ public class ShadowView extends View {
         super(context, attrs, defStyleAttr);
         paint = new Paint();
         paint.setStyle(Paint.Style.FILL);
-        paint.setColor(Color.parseColor("#00aaff"));
+        paint.setColor(color);
         paint.setAntiAlias(true);
-        paint.setAlpha(100);
-        paint.setStrokeWidth(5);
+        paint.setAlpha(alpha);
+//        paint.setStrokeWidth(5);
     }
 
     @Override
@@ -93,6 +94,10 @@ public class ShadowView extends View {
 
     public void setCurType(int curType) {
         this.curType = curType;
+    }
+
+    public void setAlpha(int alpha) {
+        this.alpha = alpha;
     }
 
 }

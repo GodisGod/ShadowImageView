@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         Glide.with(this).load(R.drawable.en).apply(requestOptions).into(imgOrigin);
 
         shadowView = findViewById(R.id.img_result);
+        shadowView.setColor(Color.parseColor("#000000"));
         seekBar = findViewById(R.id.seek_bar);
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
