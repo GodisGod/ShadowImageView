@@ -16,6 +16,7 @@ import android.view.View;
 public class ShadowView extends View {
 
     private Paint paint;
+    private Paint bgPaint;
     private int with;
     private int height;
     private int progress = 0;
@@ -24,6 +25,7 @@ public class ShadowView extends View {
     public final static int TYPE_BOTTOM = 0X2;
     private int curType = TYPE_TOP;
     private int alpha = 80;
+    private float borderWith = 0;
 
     public ShadowView(Context context) {
         this(context, null);
@@ -41,6 +43,12 @@ public class ShadowView extends View {
         paint.setAntiAlias(true);
         paint.setAlpha(alpha);
 //        paint.setStrokeWidth(5);
+        bgPaint = new Paint();
+        bgPaint.setStyle(Paint.Style.STROKE);
+        borderWith = 11f;
+        bgPaint.setStrokeWidth(borderWith);
+        bgPaint.setColor(Color.WHITE);
+        bgPaint.setAntiAlias(true);
     }
 
     @Override
@@ -81,6 +89,8 @@ public class ShadowView extends View {
         } else {
             canvas.drawArc(oval, start, angle, false, paint);
         }
+        float borderR = r - borderWith / 2-1;
+        canvas.drawCircle(with / 2, height / 2, borderR, bgPaint);
     }
 
     public void setProgress(int progress) {

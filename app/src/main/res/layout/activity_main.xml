@@ -2,6 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:background="@android:color/white"
     android:layout_height="match_parent">
 
     <study.com.shadowimageview.ShadowImageView
@@ -19,6 +20,7 @@
         <ImageView
             android:id="@+id/img_origin"
             android:layout_width="match_parent"
+            android:layout_margin="1dp"
             android:layout_height="match_parent" />
 
         <study.com.shadowimageview.ShadowView
